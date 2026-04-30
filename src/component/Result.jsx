@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Result = ({ score, totalQuestions, onRestart }) => {
+const Result = ({ score, totalQuestions, onRestart, onBackHome }) => {
   const percentage = Math.round((score / totalQuestions) * 100);
   
   let message = "";
@@ -21,10 +21,14 @@ const Result = ({ score, totalQuestions, onRestart }) => {
       </div>
 
       <p className="result-message">{message}</p>
-      
-      <button className="restart-btn" onClick={onRestart}>
-        Restart Quiz
-      </button>
+      <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem' }}>
+        <button className="restart-btn" onClick={onRestart}>
+          Restart Quiz
+        </button>
+        <button className="restart-btn" style={{ backgroundColor: '#444' }} onClick={onBackHome}>
+          Back to Home
+        </button>
+      </div>
     </div>
   );
 };
