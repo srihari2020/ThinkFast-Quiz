@@ -1,5 +1,6 @@
 {
   "name": "thinkfast-quiz",
+  "description": "A premium, fast-paced programming quiz application with multiple categories.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
