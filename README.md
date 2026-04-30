@@ -1,7 +1,7 @@
 <div align="center">
   <img src="src/assets/logo.png" alt="ThinkFast Logo" width="120" height="120" />
-  <h1>ThinkFast Quiz App</h1>
-  <p><strong>Think fast, act faster. Test your programming knowledge against the clock.</strong></p>
+  <h1>ThinkFast: The Ultimate Programming Quiz</h1>
+  <p><strong>Think fast, act faster. Prove your coding knowledge against the clock.</strong></p>
 
   [![Deploy with Vercel](https://vercel.com/button)](https://think-fast-quiz.vercel.app/)
   
@@ -10,57 +10,37 @@
 
 ---
 
-A fast-paced, premium quiz application designed to test your programming knowledge across multiple domains. Built with modern web technologies, ThinkFast features a sleek "Glassmorphism" UI, dynamic fluid animations, and interactive elements designed to provide an engaging user experience.
+## 🎯 What is ThinkFast?
 
-## ✨ Features
+**ThinkFast** is not just another quiz app—it is a premium, high-pressure environment designed to test how well you *really* know programming. Whether you are a beginner looking to solidify your fundamentals or an expert looking for a challenge, ThinkFast forces you to recall information instantly. 
 
-- 🧠 **Multiple Categories**: Test your skills in HTML, CSS, JavaScript, React, Python, Java, C++, Go, and Ruby.
-- ⏱️ **Fast-Paced Gameplay**: You have exactly 15 seconds to answer each question.
-- 🏆 **High Score Tracking**: Your best scores for each category are automatically saved to your browser and displayed on the Home dashboard.
-- 💎 **Premium UI**: Built using advanced CSS techniques like backdrop filters for glassmorphism, dynamic glowing orbs, and gradient texts.
-- 🌊 **Interactive Fluid Background**: Features a highly interactive WebGL fluid simulation cursor on the Home menu.
-- 💻 **Letter Glitch Effect**: A unique matrix-style background animation plays during the actual quiz to add pressure and visual flair.
+With exactly **15 seconds on the clock per question**, there is no time to Google. You either know it, or you don't.
 
-## 🛠️ Technologies Used
+## 🎮 How to Play
 
-- **Framework**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
-- **Routing**: [React Router DOM](https://reactrouter.com/)
-- **Styling**: Vanilla CSS with modern variables, flexbox, grid, and animations.
-- **Animations/Effects**: Custom WebGL implementation for the fluid cursor (`SplashCursor`) and interval-based text mutation for the glitch effect (`LetterGlitch`).
-- **Deployment**: [Vercel](https://vercel.com)
+1. **Choose Your Domain**: From the main dashboard, search or browse through a variety of technical domains ranging from foundational web technologies to heavy-duty systems programming languages.
+2. **Beat the Clock**: Once you start, you have 15 seconds to answer each question. If the timer hits zero, it counts as an incorrect answer and you are immediately moved to the next question!
+3. **Set High Scores**: Your highest scores are recorded directly in your browser. Strive to get a perfect 5/5 on every single category.
 
-## 🚀 Running Locally
+## 🧠 Available Domains
 
-To run this application on your local machine:
+ThinkFast currently features hand-crafted questions across the following technical domains:
+- **HTML & CSS**: The structural and visual foundation of the web.
+- **JavaScript & React**: The logic of the web and modern UI engineering.
+- **Python**: General-purpose scripting and data structures.
+- **Java**: Object-oriented principles and enterprise systems.
+- **C++**: Systems programming and memory management.
+- **Go**: Concurrent programming and modern backend architecture.
+- **Ruby**: Expressive scripting and web frameworks.
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/srihari2020/ThinkFast-Quiz.git
-   ```
-2. **Navigate to the directory**:
-   ```bash
-   cd ThinkFast-Quiz
-   ```
-3. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-4. **Start the development server**:
-   ```bash
-   npm run dev
-   ```
-5. Open your browser to the local URL (usually `http://localhost:5173`).
+## 💎 Design Philosophy
 
-## 🌐 Deployment
-
-This application is configured for seamless deployment on Vercel. A `vercel.json` file is included to handle client-side routing.
-
-To deploy via Vercel CLI:
-```bash
-npx vercel --prod
-```
+ThinkFast was designed to look and feel incredible. We stepped away from boring, static white-background forms and instead built a deeply interactive experience:
+- **Glassmorphism**: A sleek, frosted-glass interface that feels modern and premium.
+- **Interactive Environment**: The home dashboard features a highly responsive, fluid simulation cursor (`SplashCursor`) that reacts to your every mouse movement.
+- **The "Pressure" Aesthetic**: When you enter a quiz, the background shifts into a "Letter Glitch" matrix effect, subtly increasing the tension and making the experience feel uniquely intense.
 
 ---
 <div align="center">
-  <i>Designed and developed for speed and knowledge.</i>
+  <i>Designed and developed for speed, knowledge, and aesthetics.</i>
 </div>
