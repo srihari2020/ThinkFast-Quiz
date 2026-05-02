@@ -93,12 +93,8 @@ export default function Home() {
 
       <div className="home-container">
         <header className="home-header">
-          <div className="logo-container">
-            <img src={logo} alt="ThinkFast Logo" className="app-logo" />
-            <div className="logo-glow"></div>
-          </div>
-          <h1>Think<span className="text-gradient">Fast</span></h1>
-          <p className="subtitle">Test your knowledge across multiple domains. 15 seconds per question. Think fast, act faster.</p>
+          <h1 style={{ fontSize: '4rem', marginBottom: '1rem' }}>Test your <span className="text-gradient">Knowledge</span></h1>
+          <p className="subtitle">Explore multiple domains, challenge your limits. 15 seconds per question. Think fast, act faster.</p>
           
           <div className="search-container">
             <input 

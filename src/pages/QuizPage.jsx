@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Quiz from '../component/Quiz';
 import Result from '../component/Result';
-import { questions as allQuestions } from '../data/questions';
 import LetterGlitch from '../component/LetterGlitch';
 
 export default function QuizPage() {
@@ -20,21 +19,55 @@ export default function QuizPage() {
   const [hasStarted, setHasStarted] = useState(false); 
 
   useEffect(() => {
-    // Load questions based on category
-    const categoryQuestions = allQuestions[categoryId];
+    let isMounted = true;
+    setIsLoading(true);
     
-    if (!categoryQuestions) {
-      // Handle invalid category
-      navigate('/');
-      return;
-    }
+    const fetchQuestions = async () => {
+      try {
+        const apiKey = 'qa_sk_5e273462dcd32f01da6eb8533660484cf19f9022';
+        let tag = categoryId;
+        if (tag === 'js') tag = 'javascript';
+        if (tag === 'cpp') tag = 'c++';
+        
+        const response = await fetch(`https://quizapi.io/api/v1/questions?api_key=${apiKey}&limit=10&tags=${tag}`);
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch questions');
+        }
+        
+        const resData = await response.json();
+        
+        if (isMounted) {
+          if (resData.success && resData.data && resData.data.length > 0) {
+            const formatted = resData.data.map(q => ({
+              id: q.id,
+              question: q.text,
+              options: q.answers.map(a => a.text),
+              correctAnswer: q.answers.find(a => a.isCorrect)?.text || q.answers[0].text
+            }));
+            setQuestions(formatted);
+          } else {
+            console.error("No questions found for this category");
+            navigate('/');
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching questions:", error);
+        if (isMounted) {
+          navigate('/');
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
 
-    const timer = setTimeout(() => {
-      setQuestions(categoryQuestions);
-      setIsLoading(false);
-    }, 1500);
+    fetchQuestions();
 
-    return () => clearTimeout(timer);
+    return () => {
+      isMounted = false;
+    };
   }, [categoryId, navigate]);
 
   useEffect(() => {
@@ -122,9 +155,6 @@ export default function QuizPage() {
       </div>
       
       <div className="app-container">
-        <header className="app-header">
-          <h1>ThinkFast</h1>
-        </header>
 
         <main className="main-content">
           {!hasStarted ? (
